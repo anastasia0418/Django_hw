@@ -1,0 +1,24 @@
+{% extends 'mainapp/base.html'%}
+{% load static %}
+
+{%block title%}
+    <title>Продукты</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/styles.css' %}">
+{% endblock %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block content%}
+    <h1 class="test">Продукты</h1>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
