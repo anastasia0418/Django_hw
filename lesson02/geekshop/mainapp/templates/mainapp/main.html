@@ -1,0 +1,26 @@
+{% extends 'mainapp/base.html'%}
+{% load static %}
+
+{%block title%}
+    <title>Главная</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block content%}
+    <h1 class="index">Главная</h1>
+    <h2>Привет, {{ username|title }}!</h2>
+    {% if username == 'ivan' %}
+        <div>Добро пожаловать, Иван!</div>
+    {% else %}
+        <div>Неизвестный пользователь</div>
+    {% endif %}
+    <ul>
+    {% for item in array %}
+        <li>element {{ item }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+

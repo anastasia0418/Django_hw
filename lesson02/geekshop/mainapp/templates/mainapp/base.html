@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock%}
+    </title>
+    {% block css %}
+    {% endblock%}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% include 'mainapp/includes/inc_menu.html' %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% block js %}
+        {% endblock%}
+    </div>
+
+    {%block footer%}
+        <div class="footer">
+            <div class="text-footer">
+                <h5>Контакты</h5>
+            </div>
+            <div class="text-footer">
+                <h5>Полезная информация</h5>
+            </div>
+        </div>
+    {%endblock%}
+
+</body>
+</html>
